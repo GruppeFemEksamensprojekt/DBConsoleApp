@@ -62,17 +62,64 @@ namespace Controllers
 
         public List<Guest> GetAllGuest()
         {
-            throw new NotImplementedException();
+            List<Guest> listOfGuests = new List<Guest>();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string getAllGuestsQueryString = "select * from Guest";
+
+                SqlCommand command = new SqlCommand(getAllGuestsQueryString, connection);
+                command.Connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    listOfGuests.Add(new Guest() { GuestNr = reader.GetInt32(0), Navn = reader.GetString(1), Adresse = reader.GetString(2) });
+                }
+                return listOfGuests;
+            }
         }
 
         public Guest GetGuestFromId(int guestNr)
         {
-            throw new NotImplementedException();
+            Guest getSpecificGuest = null;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string getSpecificGuestQueryString = $"select * from Guest where Guest_No = {guestNr}";
+
+                SqlCommand command = new SqlCommand(getSpecificGuestQueryString, connection);
+                command.Connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    getSpecificGuest = new Guest() { GuestNr = reader.GetInt32(0), Navn = reader.GetString(1), Adresse = reader.GetString(2) };
+                }
+                return getSpecificGuest;
+            }
         }
 
         public bool UpdateGuest(Guest guest, int guestNr)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string updateGuestQueryString = $"Update Guest set Name = '{guest.Navn}', Address = '{guest.Adresse}' where Guest_No = {guestNr}";
+
+                SqlCommand command = new SqlCommand(updateGuestQueryString, connection);
+                command.Connection.Open();
+                try
+                {
+                    //Execute uden select (insert, delete, update)
+                    command.ExecuteNonQuery();
+                    return true;
+
+                }
+                catch (Exception)
+                {
+
+                    return false;
+                }
+
+            }
         }
     }
 }
