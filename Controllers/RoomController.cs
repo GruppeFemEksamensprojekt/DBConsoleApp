@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Controllers
 {
-    class RoomController
+    public class RoomController
     {
     }
 }

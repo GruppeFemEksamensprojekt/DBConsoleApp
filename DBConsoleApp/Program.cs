@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Controllers;
+using ModelKlasser;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,7 +35,10 @@ namespace DBConsoleApp
             //dbClient.SelectAllHotels();
             #endregion
 
-            
+            GuestController gController = new GuestController();
+            //gController.CreateGuest(new Guest() { GuestNr = 31, Navn = "Gunner Jensen", Adresse = "Gedevej 29, 4000 Roskilde" });
+
+            gController.DeleteGuest(31);
 
             Console.ReadLine();
         }

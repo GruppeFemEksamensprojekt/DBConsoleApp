@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Controllers
 {
-    class BookingController
+    public class BookingController
     {
     }
 }

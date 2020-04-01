@@ -9,5 +9,10 @@ namespace ModelKlasser
         public int GuestNr { get; set; }
         public string Navn { get; set; }
         public string Adresse { get; set; }
+
+        public override string ToString()
+        {
+            return $"{GuestNr} - {Navn} - {Adresse}";
+        }
     }
 }
