@@ -50,7 +50,7 @@ namespace Controllers
                 while (reader.Read())
                 {
                     getDeletedGuest = new Guest() { GuestNr = reader.GetInt32(0), Navn = reader.GetString(1), Adresse = reader.GetString(2) };
-
+                    Console.WriteLine(getDeletedGuest);
                 }
                 selectCommand.Connection.Close();
                 //Execute uden select (insert, delete, update)
