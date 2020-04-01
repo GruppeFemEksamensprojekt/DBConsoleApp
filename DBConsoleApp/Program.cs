@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Controllers;
 
 namespace DBConsoleApp
 {
@@ -32,8 +33,6 @@ namespace DBConsoleApp
             //dbClient.UpdateHotel(1, "The Pepe", "Pepestreet 420");
             //dbClient.SelectAllHotels();
             #endregion
-
-            
 
             Console.ReadLine();
         }

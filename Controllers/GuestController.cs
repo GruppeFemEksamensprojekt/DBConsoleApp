@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Controllers
 {
-    class GuestController : IManageGuest
+    public class GuestController : IManageGuest
     {
         public string connectionString = "Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = HotelDB; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False";
 

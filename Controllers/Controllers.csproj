@@ -9,7 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DBConsoleApp\DBConsoleApp.csproj" />
     <ProjectReference Include="..\ModelKlasser\ModelKlasser.csproj" />
   </ItemGroup>
 
