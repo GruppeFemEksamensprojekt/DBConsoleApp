@@ -53,6 +53,7 @@ namespace Controllers
                     Console.WriteLine(getDeletedGuest);
                 }
                 selectCommand.Connection.Close();
+                deleteCommand.Connection.Open();
                 //Execute uden select (insert, delete, update)
                 deleteCommand.ExecuteNonQuery();
                 return getDeletedGuest;
