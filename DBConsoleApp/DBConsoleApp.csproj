@@ -54,5 +54,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ModelKlasser\ModelKlasser.csproj">
+      <Project>{b23d3df8-b6a8-43ad-83ec-15ac855b5aef}</Project>
+      <Name>ModelKlasser</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

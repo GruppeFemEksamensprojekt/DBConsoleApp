@@ -10,15 +10,16 @@ namespace DBConsoleApp
     {
         static void Main(string[] args)
         {
-            DbClient dbClient = new DbClient();
+            #region FacadePattern
+            //DbClient dbClient = new DbClient();
 
-            dbClient.SelectAllHotels();
+            //dbClient.SelectAllHotels();
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            dbClient.SelectSpecificHotel(7);
+            //dbClient.SelectSpecificHotel(7);
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
             //dbClient.Insert(9, "Fiskefars Bodel Hotel", "Fisketorvet 69, 4000 Roskilde");
             //dbClient.SelectAllHotels();
@@ -28,10 +29,11 @@ namespace DBConsoleApp
             //dbClient.Delete(9);
             //dbClient.SelectAllHotels();
 
-            dbClient.UpdateHotel(1, "The Pepe", "Pepestreet 420");
-            dbClient.SelectAllHotels();
+            //dbClient.UpdateHotel(1, "The Pepe", "Pepestreet 420");
+            //dbClient.SelectAllHotels();
+            #endregion
 
-
+            
 
             Console.ReadLine();
         }
